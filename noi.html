@@ -44,15 +44,15 @@
         var a = Number(prompt('请输入a'));
         var b = Number(prompt('请输入b'));
         var c = b / a * 100;
-        console.log(c.toFixed(3));
+        console.log(c.toFixed(3) + "%");
     </script>
 
     <script id="ch0103/07">
+        var x = Number(prompt('请输入x'));
         var a = Number(prompt('请输入a'));
         var b = Number(prompt('请输入b'));
         var c = Number(prompt('请输入c'));
         var d = Number(prompt('请输入d'));
-        var x = Number(prompt('请输入x'));
         var num = a * Math.pow(x , 3) + b * Math.pow(x , 2) + c * x + d;   
         console.log(num.toFixed(7));
     </script>
@@ -66,7 +66,7 @@
     <script id="ch0103/09">
         var r = Number(prompt('请输入r'));
         var R = 2 * r;
-        var L = 2 * π * r;    
+        var L = 2 * 3.14159 * r;    
         var S = π * r * r;
         console.log(R.toFixed(4) + " " + L.toFixed(4) +　" " + S.toFixed(4));
     </script>
@@ -81,7 +81,7 @@
     <script id="ch0103/11">
         var r1 = Number(prompt('请输入r1'));
         var r2 = Number(prompt('请输入r2'));
-        console.log(r1 / r2);
+        console.log(r1 % r2);
     </script>
 
     <script id="ch0103/12">
@@ -99,9 +99,8 @@
     </script>
 
     <script id="ch0103/14">
-        var r = Number(prompt('请输入r'));
         var h = Number(prompt('请输入h'));
-        var R = 1/(1/r1 + 1/r2);
+        var r = Number(prompt('请输入r'));
         console.log(Math.ceil(20 * 1000 / (3.14159 * r * r * h)));
     </script>
 
@@ -128,7 +127,7 @@
         var y2 = Number(prompt('请输入y2'));
         var x3 = Number(prompt('请输入x3'));
         var y3 = Number(prompt('请输入y3'));
-        var S = (x1 * y2 - x1 * y3 + x2 * y3 - x2 * y1 + x3 * y1 - x2 * y2);
+        var S = (x1 * y2 - x1 * y3 + x2 * y3 - x2 * y1 + x3 * y1 - x3 * y2)/2;
         console.log(S.toFixed(2));
     </script>
 
