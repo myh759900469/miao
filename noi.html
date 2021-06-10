@@ -401,8 +401,8 @@
     </script>
 
     <script id="ch0105/07">
-       var n = Number(prompt('请输入n'));
-       var a = b = c = 0;
+        var n = Number(prompt('请输入n'));
+        var a = b = c = 0;
         for(let i = 0;i < n;i++){
             for(let j = 0;j < 3;j++){
                 if(j == 0){
@@ -412,11 +412,11 @@
                     b += +prompt('请输入银牌数：');
                 }
                 if(j == 2){
-                    b += +prompt('请输入铜牌数：');
+                    c += +prompt('请输入铜牌数：');
                 }
             }
-            console.log(a + " " + b + " " + c + " " +(a+b+c));
         }    
+        console.log(a + " " + b + " " + c + " " +(a+b+c));
     </script>
 
     <script id="ch0105/08">
@@ -503,7 +503,7 @@
         for(let i = 0;i < Y;i++){
             sum = (1 + R / 100) * sum;
         }
-        console.log(sum);
+        console.log(Math.floor(sum));
     </script>   
 
     <script id="ch0105/16">
@@ -523,24 +523,28 @@
         var k = Number(prompt('请输入k'));
         let sum = 0;
         let a = 1;
-        let b = 0;
+        let b = 1;
         for(let i = 0;i < k;i++){
-            sum = a + b;
-            b = a;
-            a = sum;
+            if(i <= 1){
+                sum = 1
+            }else{
+                sum = a + b;
+                b = a;
+                a = sum;
+            }
         }
         console.log(sum);
-    </script>    
+    </script>      
 
     <script id="ch0105/18">
         var n = Number(prompt('请输入n'));
         var a = Number(prompt('请输入a'));
         var b = Number(prompt('请输入b'));
-        let x = b / (a + b)
-        for(let i = 1;i < n;i++){
-            let c = Number(prompt('请输入a'));
-            let d = Number(prompt('请输入b'));
-            let y = c / (c + d);
+        let x = b / a;
+        for(let i = 5;i < n;i++){
+            let c = Number(prompt('请输入c'));
+            let d = Number(prompt('请输入d'));
+            let y = d / c;
             if(y - x > 0.05){
                 console.log("better");
             }else if(x - y > 0.05){
@@ -558,9 +562,9 @@
             let x = +prompt("请输入x:");
             let y = +prompt("请输入y:");
             let h = +prompt("请输入h:");
-            sum += Math.sqrt(x * x + y * y)/ 50 + 0.5 * h;
+            sum += Math.sqrt(x * x + y * y) * 2 / 50 + 1.5 * h;
         }
-        console.log(sum);
+        console.log(Math.ceil(sum));
     </script>
 
     <script id="ch0105/20">
@@ -570,21 +574,27 @@
             h *= 0.5;
             sum += h * 2;
         }
-        console.log(sum - 2 * h);
-        console.log(h);
+        console.log((sum - 2 * h).toFixed(4));
+        console.log(h.toFixed(7));
     </script>
-    <script id="ch0105/12">
+
+    <script id="ch0105/21">
         var n = Number(prompt('请输入n'));
-        var m = Number(prompt('请输入m'));
-        let sum = 0;
-        for(let i = 0;i <n;i++){
-            let a = +prompt("请输入一个数字:");
-            if(a == m){
-                sum++;
-            }
+        let sum;
+        if(n % 2 == 1){
+            sum = n * 3 + 1;
+            console.log(n + "*3+1=" + sum);
+        }else{
+            sum = n / 2;
+            console.log(n + "/2=" + sum);
         }
-        console.log(sum);
+        while(sum != 1){
+            console.log(sum + "/2=" + sum / 2);
+            sum /= 2;
+        }
+        console.log("End");
     </script>
+
     <script id="ch0105/12">
         var n = Number(prompt('请输入n'));
         var m = Number(prompt('请输入m'));
